@@ -6,7 +6,7 @@
     <title>Edit</title>
     <%@ include file="../parts/header.jsp" %>
 </head>
-<body>
+<body class="bg-dark">
 <%@ include file="../parts/navbar.jsp" %>
 <div align="center" class="bg-dark text-white">
     <form:form action="/edit/${id}" method="post" modelAttribute="editedPatient">

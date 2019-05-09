@@ -12,6 +12,9 @@ import pl.bruzgielewicz.entity.PhysicalExamination;
 import pl.bruzgielewicz.repository.PatientRepository;
 import pl.bruzgielewicz.repository.PhysicalExaminationRepository;
 
+import java.time.LocalDate;
+import java.util.List;
+
 @Controller
 public class PhysicalExaminationController {
 
@@ -30,11 +33,24 @@ public class PhysicalExaminationController {
 
     @PostMapping("/addPhysical/{id}")
     public String addPhysicalExamination(@ModelAttribute PhysicalExamination physicalExamination, @PathVariable Long id){
-//        Patient patient = patientRepository.findById(id);
         physicalExamination.setPatient(patientRepository.findById(id));
+        physicalExamination.setCreated(LocalDate.now());
         physicalExamination.setId(null);
         physicalExaminationRepository.save(physicalExamination);
 
         return "redirect: /home";
+    }
+
+    @GetMapping("/showPhysical/{id}")
+    public String showPhysicalExaminations(@PathVariable Long id, Model model){
+        List<PhysicalExamination> listOfPhysicalExaminations = physicalExaminationRepository.findPhysicalExaminationByPatientId(id);
+        model.addAttribute("listOfPhysicalExaminations", listOfPhysicalExaminations );
+        return "physicalExamination/show";
+    }
+
+    @GetMapping("/showDetails/{id}")
+    public String showPhysicalExaminationDetails(@PathVariable Long id, Model model){
+        model.addAttribute("details",physicalExaminationRepository.findById(id));
+        return "physicalExamination/details";
     }
 }
