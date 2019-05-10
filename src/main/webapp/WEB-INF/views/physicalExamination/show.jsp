@@ -21,7 +21,7 @@
             <th scope="row">${examination.id}</th>
             <td>${examination.created}</td>
             <td>
-                <a class="btn btn-info" href="/showDetails/${examination.id}">Details</a>
+                <a class="btn btn-dark" href="/showDetails/${examination.id}">Details</a>
             </td>
         </tr>
         </tbody>

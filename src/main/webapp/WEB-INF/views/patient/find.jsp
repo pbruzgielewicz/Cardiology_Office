@@ -42,11 +42,11 @@
             <td>${patient.firstName}</td>
             <td>${patient.lastName}</td>
             <td>
-                <a class="btn btn-info btn-sm" href="edit/${patient.id}">Edit</a>
-                <a class="btn btn-info btn-sm" href="show/${patient.id}">Show</a>
+                <a class="btn btn-dark btn-sm" href="edit/${patient.id}">Edit</a>
+                <a class="btn btn-dark btn-sm" href="show/${patient.id}">Show</a>
             </td>
-            <td><a class="btn btn-info btn-sm" href="addPhysical/${patient.id}">AddPhysical</a></td>
-            <td><a class="btn btn-info btn-sm" href="addAdditional/${patient.id}">AddAdditional</a></td>
+            <td><a class="btn btn-dark btn-sm" href="addPhysical/${patient.id}">AddPhysical</a></td>
+            <td><a class="btn btn-dark btn-sm" href="addAdditional/${patient.id}">AddAdditional</a></td>
         </tr>
         </tbody>
     </c:forEach>

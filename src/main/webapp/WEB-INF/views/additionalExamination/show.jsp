@@ -25,7 +25,7 @@
             <td>${examination.type}</td>
             <td>${examination.created}</td>
             <td>
-                <a class="btn btn-info" href="/details/${examination.id}">Details</a>
+                <a class="btn btn-dark" href="/details/${examination.id}">Details</a>
             </td>
         </tr>
         </tbody>

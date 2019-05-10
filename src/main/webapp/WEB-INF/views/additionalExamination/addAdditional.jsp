@@ -15,11 +15,13 @@
             <div class="form-group col-md-6">
                 <label>Data</label>
                 <form:input path="data" type="text" class="form-control" placeholder="Data"/>
+                <form:errors path="data">
+                    <span class="text-danger">*Data is required!</span>
+                </form:errors>
             </div>
             <div class="form-group col-md-6">
                 <label>Type</label>
                 <form:select path="type" type="text" class="form-control">
-                    <form:option value="-" label="--select type--"/>
                     <form:options items="${types}"/>
                 </form:select>
             </div>

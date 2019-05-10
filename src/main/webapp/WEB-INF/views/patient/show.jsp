@@ -29,10 +29,11 @@
 </div>
 <div align="center">
     <div>
-        <a href="/showPhysical/${patient.id}">Show PhysicalEx</a>
+        <a class="btn btn-light btn-sm " href="/showPhysical/${patient.id}">Show PhysicalEx</a>
     </div>
+    <p></p>
     <div>
-        <a href="/showAdditional/${patient.id}">Show AdditionalEx</a>
+        <a class="btn btn-light btn-sm" href="/showAdditional/${patient.id}">Show AdditionalEx</a>
     </div>
 
 </div>

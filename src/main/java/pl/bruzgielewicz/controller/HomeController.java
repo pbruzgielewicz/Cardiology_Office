@@ -19,6 +19,11 @@ public class HomeController {
     @Autowired
     PatientRepository patientRepository;
 
+    @GetMapping("/")
+    public String login(){
+        return "login";
+    }
+
     @GetMapping("/home")
     public String homePage(Model model){
         List<Patient> listOfAllPatients = patientRepository.findAll();

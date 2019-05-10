@@ -1,5 +1,7 @@
 package pl.bruzgielewicz.entity;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -13,7 +15,9 @@ public class AdditionalExamination {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotEmpty
     private String data;
+
     private String type;
     private LocalDate created;
 

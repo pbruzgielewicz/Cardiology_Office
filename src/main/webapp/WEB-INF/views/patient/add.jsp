@@ -16,21 +16,21 @@
             <label>First name</label>
             <form:input path="firstName" type="text" class="form-control" placeholder="First name"/>
             <form:errors path="firstName">
-                <span class="text-danger">First name is required!</span>
+                <span class="text-danger">*First name is required!</span>
             </form:errors>
         </div>
         <div class="form-group col-md-6">
             <label>Last name</label>
             <form:input path="lastName" type="text" class="form-control" placeholder="Last name"/>
             <form:errors path="lastName">
-                <span class="text-danger">Last name is required!</span>
+                <span class="text-danger">*Last name is required!</span>
             </form:errors>
         </div>
         <div class="form-group col-md-6">
             <label>PESEL</label>
             <form:input path="pesel" type="text" class="form-control"/>
             <form:errors path="pesel">
-                <span class="text-danger">Wrong pesel, try again!</span>
+                <span class="text-danger">*Wrong pesel, try again!</span>
             </form:errors>
 
         </div>
