@@ -7,7 +7,7 @@
     <%@ include file="../parts/header.jsp" %>
 </head>
 <body class="bg-dark">
-
+<%@ include file="../parts/navbar.jsp" %>
 <form:form action="/addAdditional/${id}" method="post" modelAttribute="additionalExamination">
     <div align="center">
         <div class="form-group col-md-6 p-3 mb-2 bg-dark text-white">

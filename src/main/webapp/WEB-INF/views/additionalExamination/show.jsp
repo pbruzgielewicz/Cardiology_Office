@@ -14,7 +14,7 @@
         <th scope="col">Data</th>
         <th scope="col">Type</th>
         <th scope="col">Created</th>
-        <th scope="col">Action</th>
+        <th scope="col">Show more</th>
     </tr>
     </thead>
     <c:forEach items="${listOfAdditionalExaminations}" var="examination">
@@ -24,9 +24,9 @@
             <td>${examination.data}</td>
             <td>${examination.type}</td>
             <td>${examination.created}</td>
-            <%--<td>--%>
-                <%--<a href="show/${patient.id}">Edit</a>--%>
-            <%--</td>--%>
+            <td>
+                <a class="btn btn-info" href="/details/${examination.id}">Details</a>
+            </td>
         </tr>
         </tbody>
     </c:forEach>

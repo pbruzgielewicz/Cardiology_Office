@@ -20,9 +20,9 @@
         <tr>
             <th scope="row">${examination.id}</th>
             <td>${examination.created}</td>
-                <td>
+            <td>
                 <a class="btn btn-info" href="/showDetails/${examination.id}">Details</a>
-                </td>
+            </td>
         </tr>
         </tbody>
     </c:forEach>

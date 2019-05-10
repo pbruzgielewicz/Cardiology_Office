@@ -9,34 +9,33 @@
 <%@ include file="../parts/navbar.jsp" %>
 <div align="center">
     <h6>Id</h6>
-<p>${patient.id}</p>
+    <p>${patient.id}</p>
     <h6>First Name</h6>
-<p>${patient.firstName}</p>
+    <p>${patient.firstName}</p>
     <h6>Last Name</h6>
-<p>${patient.lastName}</p>
+    <p>${patient.lastName}</p>
     <h6>Pesel</h6>
-<p>${patient.pesel}</p>
+    <p>${patient.pesel}</p>
     <h6>Adress</h6>
-<p>${patient.adress}</p>
+    <p>${patient.adress}</p>
     <h6>Present Ailments</h6>
-<p>${patient.presentAilments}</p>
+    <p>${patient.presentAilments}</p>
     <h6>Previous Diseases</h6>
-<p>${patient.previousDiseases}</p>
+    <p>${patient.previousDiseases}</p>
     <h6>Current Medicines</h6>
-<p>${patient.currentMedicines}</p>
+    <p>${patient.currentMedicines}</p>
     <h6>Date of Birth</h6>
-<p>${patient.dateOfBirth}</p>
+    <p>${patient.dateOfBirth}</p>
 </div>
 <div align="center">
     <div>
         <a href="/showPhysical/${patient.id}">Show PhysicalEx</a>
     </div>
     <div>
-    <a href="/showAdditional/${patient.id}">Show AdditionalEx</a>
+        <a href="/showAdditional/${patient.id}">Show AdditionalEx</a>
     </div>
 
 </div>
-
 
 
 <%@ include file="../parts/footer.jsp" %>

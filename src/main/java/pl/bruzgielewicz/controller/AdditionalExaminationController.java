@@ -50,6 +50,12 @@ public class AdditionalExaminationController {
         return "additionalExamination/show";
     }
 
+    @GetMapping("/details/{id}")
+    public String showAdditionalExDetails(@PathVariable Long id, Model model){
+        model.addAttribute("details", additionalExaminationRepository.findOne(id));
+        return "additionalExamination/details";
+    }
+
     @ModelAttribute("types")
     public List<String> examinationTypes(){
         List<String> examinationTypes = new ArrayList<>();
