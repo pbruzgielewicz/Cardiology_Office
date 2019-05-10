@@ -11,11 +11,10 @@ import pl.bruzgielewicz.entity.AdditionalExamination;
 import pl.bruzgielewicz.entity.Patient;
 import pl.bruzgielewicz.repository.AdditionalExaminationRepository;
 import pl.bruzgielewicz.repository.PatientRepository;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ListIterator;
+
 
 @Controller
 public class AdditionalExaminationController {
@@ -35,7 +34,7 @@ public class AdditionalExaminationController {
     }
 
     @PostMapping("/addAdditional/{id}")
-    public String addAdditionalExamination(@ModelAttribute AdditionalExamination additionalExamination, @PathVariable Long id) {
+    public String addAdditionalExamination(@ModelAttribute(name = "additionalExamination") AdditionalExamination additionalExamination, @PathVariable Long id) {
         Patient patient = patientRepository.findById(id);
         additionalExamination.setPatient(patient);
         additionalExamination.setCreated(LocalDate.now());

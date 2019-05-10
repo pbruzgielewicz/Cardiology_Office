@@ -16,15 +16,23 @@
             <div class="form-group col-md-6">
                 <label>First name</label>
                 <form:input path="firstName" type="text" class="form-control" placeholder="${editedPatient.firstName}"/>
+                <form:errors path="firstName">
+                    <span class="text-danger">First name is required!</span>
+                </form:errors>
             </div>
             <div class="form-group col-md-6">
                 <label>Last name</label>
                 <form:input path="lastName" type="text" class="form-control" placeholder="${editedPatient.lastName}"/>
+                <form:errors path="lastName">
+                    <span class="text-danger">Last name is required!</span>
+                </form:errors>
             </div>
             <div class="form-group col-md-6">
                 <label>PESEL</label>
                 <form:input path="pesel" type="text" class="form-control" placeholder="${editedPatient.pesel}"/>
-                <form:errors path="pesel"/>
+                <form:errors path="pesel">
+                    <span class="text-danger">Wrong pesel, try again!</span>
+                </form:errors>
             </div>
             <div class="form-group col-md-6">
                 <label>Date of birth</label>
@@ -36,21 +44,24 @@
             </div>
             <div class="form-group col-md-6">
                 <label>Present Ailments</label>
-                <form:textarea path="presentAilments" rows="3" type="text" class="form-control" placeholder="Present Ailments"/>
+                <form:textarea path="presentAilments" rows="3" type="text" class="form-control"
+                               placeholder="Present Ailments"/>
             </div>
             <div class="form-group col-md-6">
                 <label>Previous Diseases</label>
-                <form:textarea path="previousDiseases" rows="3" type="text" class="form-control" placeholder="Previous Diseases"/>
+                <form:textarea path="previousDiseases" rows="3" type="text" class="form-control"
+                               placeholder="Previous Diseases"/>
             </div>
             <div class="form-group col-md-6">
                 <label>Current Medicines</label>
-                <form:textarea path="currentMedicines" rows="3" type="text" class="form-control" placeholder="Current Medicines"/>
+                <form:textarea path="currentMedicines" rows="3" type="text" class="form-control"
+                               placeholder="Current Medicines"/>
             </div>
 
         </div>
         <button type="submit" class="btn btn-light">Save</button>
 
-</form:form>
+    </form:form>
 </div>
 <%@ include file="../parts/footer.jsp" %>
 </body>

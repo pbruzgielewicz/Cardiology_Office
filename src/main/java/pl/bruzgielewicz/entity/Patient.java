@@ -1,5 +1,8 @@
 package pl.bruzgielewicz.entity;
 
+import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.pl.PESEL;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,9 +15,11 @@ public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotEmpty
     private String firstName;
+    @NotEmpty
     private String lastName;
-
+    @PESEL
     private String pesel;
     private String adress;
     private String presentAilments;

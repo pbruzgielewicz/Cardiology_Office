@@ -7,11 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import pl.bruzgielewicz.entity.Patient;
 import pl.bruzgielewicz.entity.PhysicalExamination;
 import pl.bruzgielewicz.repository.PatientRepository;
 import pl.bruzgielewicz.repository.PhysicalExaminationRepository;
-
 import java.time.LocalDate;
 import java.util.List;
 
@@ -32,7 +30,7 @@ public class PhysicalExaminationController {
     }
 
     @PostMapping("/addPhysical/{id}")
-    public String addPhysicalExamination(@ModelAttribute PhysicalExamination physicalExamination, @PathVariable Long id){
+    public String addPhysicalExamination(@ModelAttribute(name = "physicalExamination") PhysicalExamination physicalExamination, @PathVariable Long id){
         physicalExamination.setPatient(patientRepository.findById(id));
         physicalExamination.setCreated(LocalDate.now());
         physicalExamination.setId(null);

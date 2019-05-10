@@ -3,10 +3,11 @@ package pl.bruzgielewicz.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import pl.bruzgielewicz.entity.Patient;
 import pl.bruzgielewicz.repository.PatientRepository;
-
 
 
 import java.util.List;
@@ -26,38 +27,45 @@ public class PatientController {
     }
 
     @PostMapping("patients/add")
-    public String addPatient(@ModelAttribute("patient") Patient patient ) {
-
-        patientRepository.save(patient);
-        return "redirect:/home";
+    public String addPatient(@ModelAttribute(name = "patient") @Validated Patient patient, BindingResult result) {
+        if (result.hasErrors()) {
+            return "patient/add";
+        } else {
+            patientRepository.save(patient);
+            return "redirect:/home";
+        }
     }
 
     @GetMapping("edit/{id}")
-    public String editPatient(@PathVariable Long id, Model model ){
+    public String editPatient(@PathVariable Long id, Model model) {
         model.addAttribute("editedPatient", patientRepository.findById(id));
         return "patient/edit";
     }
 
     @PostMapping("/edit/{id}")
-    public String editPatient(@ModelAttribute("editedPatient")Patient patient) {
-        patientRepository.save(patient);
-        return "redirect: /home";
+    public String editPatient(@PathVariable Long id, @ModelAttribute(name = "editedPatient") @Validated Patient patient, BindingResult result) {
+        if (result.hasErrors()) {
+            return "patient/edit";
+        } else {
+            patientRepository.save(patient);
+            return "redirect: /home";
+        }
 
     }
 
     @GetMapping("/show/{id}")
-    public String showDetails(@PathVariable Long id, Model model){
+    public String showDetails(@PathVariable Long id, Model model) {
         model.addAttribute("patient", patientRepository.findById(id));
         return "patient/show";
     }
 
     @GetMapping("/find")
-    public String findPatient(){
+    public String findPatient() {
         return "patient/find";
     }
 
     @PostMapping("/find")
-    public String findPatient(Model model, @RequestParam String lastName){
+    public String findPatient(Model model, @RequestParam String lastName) {
         List<Patient> patients = patientRepository.findByLastNameAllIgnoreCase(lastName);
         model.addAttribute("patients", patients);
         return "/patient/find";
